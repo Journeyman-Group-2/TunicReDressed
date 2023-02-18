@@ -2,6 +2,10 @@ Binaries
 DerivedDataCache
 Intermediate
 Saved
+
+#From Rio: Anything with a large file size should go in here so it isn't included. Check group one drive for external assets.
+Content/ExternalAssets
+
 .vscode
 .vs
 *.VC.db
