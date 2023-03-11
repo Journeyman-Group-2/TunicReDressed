@@ -13,7 +13,7 @@ def CheckForCorruptedFiles(currentDirectory):
             
         elif element.endswith(".uasset"):
             if(os.stat(potentialPath).st_size <= 1024):
-                listOfCorruptedFiles.append(currentDirectory)
+                listOfCorruptedFiles.append(potentialPath)
         
             
             
@@ -22,7 +22,12 @@ print("This python script will scan the current working directory and all sub di
 
 print("\n")
 
-CheckForCorruptedFiles(os.getcwd())
+os.chdir("..")
+searchInDirectory = os.getcwd()
+
+print("Search directory :", searchInDirectory, "\n")
+
+CheckForCorruptedFiles(searchInDirectory)
 
 if len(listOfCorruptedFiles) > 0:
         print("Some files were found to be corrupted!. See below:")
