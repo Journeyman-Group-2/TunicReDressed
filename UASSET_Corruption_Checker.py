@@ -13,7 +13,7 @@ def CheckForCorruptedFiles(currentDirectory):
             
         elif element.endswith(".uasset"):
             if(os.stat(potentialPath).st_size <= 1024):
-                listOfCorruptedFiles.append(currentDirectory + "\\" + element)
+                listOfCorruptedFiles.append(currentDirectory)
         
             
             
@@ -31,3 +31,5 @@ if len(listOfCorruptedFiles) > 0:
             print("\t" + element)
 else:
     print("No corrupted files were found, and the Git LFS Overlords are sad!\n")
+
+print("\n")
