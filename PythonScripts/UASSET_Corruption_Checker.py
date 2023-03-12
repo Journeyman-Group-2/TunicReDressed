@@ -11,7 +11,7 @@ def CheckForCorruptedFiles(currentDirectory):
         if os.path.isdir(potentialPath):
             CheckForCorruptedFiles(potentialPath)
             
-        elif element.endswith(".uasset"):
+        elif element.endswith(".uasset") or element.endswith(".umap"):
             if(os.stat(potentialPath).st_size <= 1024):
                 listOfCorruptedFiles.append(potentialPath)
         
